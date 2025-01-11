@@ -8,15 +8,17 @@
     <div class="row"> 
         {% for product in products %}
             <div class="col-md-3 mt-4">
+
                 <div class="card" style="width: 18rem;">
                     <img src="{{ asset('uploads/images/'~product.image) }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a style="text-decoration: none; color:green" href="{{ path('app_home_product_show', {'id':product.id}) }}"><h5 class="card-title">{{product.name}}</h5></a>
-                        <p class="card_text">{{product.description|slice(0.60)}} ...</p>
+                        <h5 class="card-title text-success">{{product.name}}</h5>
+                        <p class="card-text">{{product.description|slice(0,60)}} ...</p>
                         <h3>{{ product.price }} FCFA</h3>
                         <a href="#" class="text-success">Ajouter au panier</a>
                     </div>
-                </div>
+                </div>                  
+                    
             </div>
         {% endfor %}   
     </div>   
